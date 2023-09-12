@@ -21,10 +21,10 @@ int main(void)
 	fib1 = fib2;
 	fib2 = sum;
 	}
-	fib1_half1 = fib1 / 100000000000;
-	fib2_half1 = fib2 / 100000000000;
-	fib1_half2 = fib1 % 100000000000;
-	fib2_half2 = fib2 % 100000000000;
+	fib1_half1 = fib1 / 10000000000;
+	fib2_half1 = fib2 / 10000000000;
+	fib1_half2 = fib1 % 10000000000;
+	fib2_half2 = fib2 % 10000000000;
 	for (count = 93; count < 99; count++)
 	{
 	half1 = fib1_half1 + fib2_half1;
