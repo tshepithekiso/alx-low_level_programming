@@ -1,19 +1,16 @@
 #include "main.h"
-
 /**
- * print_numbers - Print the numbers since 0 up to 9
- * Return: The numbers since 0 up to 9
+ * print_numbers - from 0 up to 9
+ *
+ * Return: anything u want 1 or 0
  */
-
-int print_numbers(void)
-
+void print_numbers(void)
 {
+	int i;
 
-	int x;
-
-	for (x = 0; x <= 9; x++)
+	for (i = 0; i < 10; i++)
 	{
-	_putchar(x + '0');
+		_putchar(i + '0');
 	}
 	_putchar('\n');
 }
