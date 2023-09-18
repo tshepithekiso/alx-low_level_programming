@@ -4,7 +4,7 @@
 
 /**
  * main - Generate a random valid passwords the
- * program 101-crackme.
+ * 101-crackme.
  * Return: Always 0.
  */
 
@@ -19,7 +19,7 @@ int main(void)
 
 	{
 		password[index] = 33 + rand() % 94;
-		sum += password[index];
+		sum += password[index++];
 	}
 	password[index] = '\0';
 
@@ -34,6 +34,7 @@ int main(void)
 		for (index = 0; password[index]; index++)
 		{
 			if (password[index] >= (33 + diff_half1))
+
 			{
 				password[index] -= diff_half1;
 
