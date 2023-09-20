@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcpy - copies input numbers
+ * _strcpy - copies input numbers of bytes from string src into dest
  * @dest: store the string copy
  * @src: source string
  * @n: max number of bytes copied
@@ -9,7 +9,9 @@
  */
 
 char *_strncpy(char *dest, char *src, int n)
+
 {
+
 	int index = 0, src_len = 0;
 
 	while (src[index++])
@@ -19,7 +21,7 @@ char *_strncpy(char *dest, char *src, int n)
 	dest[index] = src[index];
 
 	for (index = src_len; index < n; index++)
-	dest[index] ='\0';
+	dest[index] = '\0';
 
 	return (dest);
 }
