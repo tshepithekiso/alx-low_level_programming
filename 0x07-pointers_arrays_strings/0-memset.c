@@ -5,6 +5,7 @@
  * @s: start address of memory to be filled
  * @b: the desired value
  * @n: number of byte to be changed
+ *
  * Return: chang array witha new value for n bytes
  */
 
