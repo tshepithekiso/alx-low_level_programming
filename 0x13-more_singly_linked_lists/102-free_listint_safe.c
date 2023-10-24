@@ -1,12 +1,11 @@
 #include "lists.h"
-
+#include <stdlib.h>
 /**
- * free_listint_safe - free a linked list
- * @h: first node int a linked list
+ * free_listint_safe - free
+ * @h: pointer
  *
- * Return: the size of the list that was free’d
+ * Return: number
  */
-
 size_t free_listint_safe(listint_t **h)
 {
 	size_t len = 0;
@@ -28,13 +27,12 @@ size_t free_listint_safe(listint_t **h)
 		}
 		else
 		{
-		free(*h);
-		*h = NULL;
-		len++;
-		break;
+			free(*h);
+			*h = NULL;
+			len++;
+			break;
 		}
 	}
-
 	*h = NULL;
 
 	return (len);
