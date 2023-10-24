@@ -10,7 +10,7 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t len = 0;
-	int diff;
+	int di;
 	listint_t *temp;
 
 	if (!h || !*h)
@@ -18,8 +18,8 @@ size_t free_listint_safe(listint_t **h)
 
 	while (*h)
 	{
-		diff = *h - (*h)->next;
-		if (diff > 0)
+		di = *h - (*h)->next;
+		if (di > 0)
 		{
 			temp = (*h)->next;
 			free(*h);
