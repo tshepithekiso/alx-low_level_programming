@@ -3,82 +3,75 @@
 
 size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
-
 /**
- * looped_listint_len - count the numbers of the nodes
- * @head: the first nodes in a linked list
+ * looped_listint_len - counts
+ * @head: a pointer
  *
- * Return: if the list is not looped - 0
- * otherwise - the number of unique nodes in the list
+ * Return: success
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	const listint_t *tortoise, *hare;
+	const listint_t *ti, *hare;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	tortoise = head->next;
+	ti = head->next;
 	hare = (head->next)->next;
 
 	while (hare)
 	{
-		if (tortoise == hare)
+		if (ti == hare)
 		{
-			tortoise = head;
-			while (tortoise != hare)
+			ti = head;
+			while (ti != hare)
 			{
-			nodes++;
-			tortoise = tortoise->next;
-			hare = hare->next;
+				nodes++;
+				ti = ti->next;
+				hare = hare->next;
 			}
-		tortoise = tortoise->next;
-		while (tortoise != hare)
-		{
-		nodes++;
-		tortoise = tortoise->next;
+			ti = ti->next;
+			while (ti != hare)
+			{
+				nodes++;
+				ti = ti->next;
+			}
+			return (nodes);
 		}
-	return (nodes);
-		}
-
-	tortoise = tortoise->next;
-	hare = (hare->next)->next;
+		ti = ti->next;
+		hare = (hare->next)->next;
 	}
 	return (0);
 }
-
-
 /**
- * print_listint_safe - print listint_t list safely
- * @head: pointer to the head linked list
+ * print_listint_safe - print
+ * @head: pointer
  *
- * Return: the number of nodes in a linked lists
+ * Return: success
  */
+
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index = 0;
 
 	nodes = looped_listint_len(head);
-
 	if (nodes == 0)
 	{
 		for (; head != NULL; nodes++)
 		{
-			printf("[%p]%d\n", (void *)head, head->n);
+			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
 	}
-
 	else
 	{
 		for (index = 0; index < nodes; index++)
 		{
-			printf("[%p]%d\n", (void *)head, head->n);
+			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
-		printf("-> [%p]%d\n", (void *)head, head->n);
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
-
 	return (nodes);
 }
